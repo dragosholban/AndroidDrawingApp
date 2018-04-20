@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#AFAFAF"
     tools:context=".MainActivity">
-    <View
+    <com.dragosholban.androiddrawing.DrawingView
         android:id="@+id/canvas"
         android:layout_width="0dp"
         android:layout_height="0dp"
