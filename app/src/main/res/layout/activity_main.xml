@@ -62,6 +62,21 @@
             android:layout_margin="1dp"
             android:background="#000000"
             android:onClick="setColor"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="1dp"
+            android:background="#FFFFFF"
+            android:onClick="setColor"
+            android:tag="eraser"/>
+        <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:drawable/ic_menu_delete"
+            android:onClick="deleteDrawing" />
     </LinearLayout>
     <SeekBar
         android:id="@+id/seekBar"
