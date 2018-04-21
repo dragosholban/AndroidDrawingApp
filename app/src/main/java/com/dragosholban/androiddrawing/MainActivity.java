@@ -1,7 +1,9 @@
 package com.dragosholban.androiddrawing;
 
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,5 +16,10 @@ public class MainActivity extends AppCompatActivity {
 
         drawingView = findViewById(R.id.canvas);
         drawingView.setOnTouchListener(new TouchListener());
+    }
+
+    public void setColor(View view) {
+        ColorDrawable buttonColor = (ColorDrawable) view.getBackground();
+        drawingView.setCurrentColor(buttonColor.getColor());
     }
 }
