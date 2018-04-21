@@ -17,6 +17,8 @@ public class DrawingView extends View {
     private ArrayList<Path> paths = new ArrayList<>();
     private ArrayList<Integer> colors = new ArrayList<>();
     private int currentColor = 0xFF000000;
+    private ArrayList<Integer> widths = new ArrayList<>();
+    private int currentWidth = 6;
 
     public DrawingView(Context context) {
         super(context);
@@ -38,6 +40,7 @@ public class DrawingView extends View {
     public void addPath(Path path) {
         paths.add(path);
         colors.add(currentColor);
+        widths.add(currentWidth);
     }
 
     public Path getLastPath() {
@@ -57,7 +60,7 @@ public class DrawingView extends View {
             Paint paint = new Paint();
             paint.setColor(colors.get(i));
             paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeWidth(3f);
+            paint.setStrokeWidth(widths.get(i));
             canvas.drawPath(path, paint);
             i++;
         }
@@ -65,5 +68,9 @@ public class DrawingView extends View {
 
     public void setCurrentColor(int color) {
         currentColor = color;
+    }
+
+    public void setCurrentWidth(int width) {
+        currentWidth = (width + 1) * 2;
     }
 }
